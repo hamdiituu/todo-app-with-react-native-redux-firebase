@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {View,Text, Button, SafeAreaView,TouchableOpacity} from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import TodoView from '../components/TodoView';
 
 class MainScreen extends Component{
@@ -12,20 +12,31 @@ class MainScreen extends Component{
   render(){
     return(
       <SafeAreaView style={{flex:1,flexDirection:"column"}}>
-        <View style={{flex:1,flexDirection:"column"}}>
-          <Text style={{backgroundColor:"#FF5733",color:"#E3E3E3",fontSize:20,paddingLeft:60,width:200}} >Yapılacaklar</Text>  
-          <TouchableOpacity
+       <View style={{flex:1,backgroundColor:"#F9CC16",flexDirection:"row",justifyContent:"space-between"}}>
+         
+       <View>
+        <Text>	&nbsp;</Text>
+         </View>
+          <View > 
+          <Text style={{fontSize:30,textAlign:"center"}} >Görevler</Text>
+         </View>
        
-        onPress={()=>this.props.navigation.navigate('addTodo')}
-      >
-        <Text
-        style={{backgroundColor:"#96B487",color:"#E3E3E3",fontSize:17,paddingLeft:30,paddingRight:30,width:100}}
-        >Yeni Ekle</Text>
-      </TouchableOpacity>
-        </View>
 
+         <View>
+              <TouchableOpacity
+              onPress={()=>this.props.navigation.navigate('addTodo')}
+              >
+                <Text style={{fontSize:35}}>
+                &oplus;
+                </Text>
+              </TouchableOpacity> 
+         </View>
+        
+         
+  
+    </View>
 
-      <View style={{flex:5}}>
+      <View style={{flex:15,marginTop:40}}>
   
        <ScrollView>
          {
