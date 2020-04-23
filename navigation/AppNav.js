@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {AuthNav,MainNav} from '../navigation';
-
+import {connect} from 'react-redux'
 class AppNav extends Component{
     render(){
         return(
@@ -12,5 +12,10 @@ class AppNav extends Component{
         );
     }
 }
+function mapStateToProps(state){
+    return{
+        login :state.loginReducer.loginSucces
+    };
+}
 
-export default AppNav;
+export default connect(mapStateToProps)(AppNav);

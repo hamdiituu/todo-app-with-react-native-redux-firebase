@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
 
 import {View,Text,TextInput, Button} from 'react-native';
-
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {loginSuccces} from '../redux/actions/LoginActions';
 class LoginScreen extends Component{
   render(){
     return(
@@ -19,7 +21,7 @@ class LoginScreen extends Component{
         secureTextEntry={true}
         />
         <View style={{flexDirection:"row"}}>
-        <Button title="Giriş Yap" />
+        <Button title="Giriş Yap"  onPress={()=>this.props.dispatch(loginSuccces())} />
         <Button title="Kayıt Ol" onPress={()=>this.props.navigation.navigate('register')} /> 
         </View>
         
@@ -29,4 +31,10 @@ class LoginScreen extends Component{
   }
 }
 
-export default LoginScreen;
+function mapDispacthToProps(dispatch){
+  return{
+    action : bindActionCreators(loginSuccces,dispatch)
+  };
+}
+
+export default connect(mapDispacthToProps)(LoginScreen);
