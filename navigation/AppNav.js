@@ -6,8 +6,8 @@ class AppNav extends Component{
     render(){
         return(
             <NavigationContainer>
-                {/* <AuthNav/> */} 
-                <MainNav/>
+                 {this.props.login ?  <MainNav/> : <AuthNav/> }
+               
             </NavigationContainer>
         );
     }

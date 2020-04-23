@@ -3,7 +3,7 @@ import {AppNav} from './navigation'
 class App extends Component{
   render(){
     return(
-     <AppNav/>
+     <AppNav login={true}/>
     );
   }
 }

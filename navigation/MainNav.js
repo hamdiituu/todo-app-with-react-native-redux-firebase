@@ -7,7 +7,11 @@ const MainStack = createStackNavigator();
 class MainNav extends Component{
     render(){
         return(
-            <MainStack.Navigator>
+            <MainStack.Navigator 
+            screenOptions={{
+                headerShown :false
+            }}
+            >
                
                 <MainStack.Screen name="main" component={Main} />
                 <MainStack.Screen name="profile" component={Profile} />
